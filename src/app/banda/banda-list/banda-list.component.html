@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="col-8">
+    <table class="table table-bordered table-hover">
+      <thead class="thread-dark">
+        <tr>
+          <th class="h4">id</th>
+          <th class="h4">Nombre</th>
+          <th class="h4">País</th>
+          <th class="h4">Género musical</th>
+          <th class="h4">Año fundación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of bandas">
+          <td>
+            <dd>{{b.id}}</dd>
+          </td>
+          <td>
+            <dd><a href="#">{{b.name}}</a></dd>
+          </td>
+          <td>
+            <dd>{{b.country}}</dd>
+          </td>
+          <td>
+            <dd>{{b.genre}}</dd>
+          </td>
+          <td>
+            <dd>{{b.foundation_year}}</dd>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-2">
+    <div *ngIf="selected">
+      <app-banda-detail [bandaDetail]="selectedBanda"></app-banda-detail>
+    </div>
+  </div>
+</div>
+<p>La banda más antigua es {{oldestBand.name}} y fue fundada hace {{oldestBand.foundation_year}} años</p>
